@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 
 SOURCE="http://mirrors.ustc.edu.cn/gnu/libc"
-GLIBC_DIR="/glibc"
+GLIBC_DIR=${GLIBC_DIR:-"/glibc"}
 
 
 
@@ -101,7 +101,7 @@ if [[ $# != 2 ]]; then
 fi
 
 echo "[*] checking requirements"
-apt-get install gawk bison gcc-multilib g++-multilib -y
+sudo apt-get install gawk bison gcc-multilib g++-multilib -y
 
 GLIBC_VERSION=$1
 ARCH=$2
